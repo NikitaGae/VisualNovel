@@ -1,0 +1,85 @@
+html, body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  background-color: black;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 2.3vmin;
+  color: rgb(240, 18, 103);
+  user-select: none;
+}
+
+scene {
+  position: absolute;
+  width: 1280px;
+  height: 720px;
+  display: inline-block;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+#FudgeStoryLogo {
+  display: block;
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+speech {
+  background: rgba(0, 0, 0, 0.445);
+  position: absolute;
+  display: block;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-size: cover;
+  height: 15%;
+  padding: 15px;
+  margin: 130px;
+  margin-bottom: 50px;
+  color: white;
+  -webkit-user-select: none;     
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+speech content {
+  color: rgb(63, 224, 208);
+  font-size: 1.7vmin;
+  position: absolute;
+  left: 10px;
+}
+
+name {
+  font-size: 2vmin;
+  display: block;
+  color: rgb(218, 69, 171);
+  margin-bottom: 10px;
+}
+
+dialog[type=splash] {
+  background-image: url("Images/Backgrounds/space.jpg");
+  margin: 0px;
+  padding: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+dialog[type=splash]>img#FudgeStoryLogo {
+  width: 100%;
+}
+
+.choicesCSSclass {
+  background-color: lightcoral;
+}
