@@ -1,26 +1,66 @@
-namespace Template {
+namespace VisualNovel {
+
   export import ƒ = FudgeCore;
   export import ƒS = FudgeStory;
-
-  console.log("FudgeStory template starting");
 
   export let transition = {
     swirl: {
       duration: 1,
-      alpha: "Transitions/swirl.png",
+      alpha: "Assets/Transitions/swirl.png",
+      edge: 1
+    },
+
+    blink: {
+      duration: 3,
+      alpha: "Assets/Transitions/blink2.png",
+      edge: 1
+    },
+    
+    u: {
+      duration: 3,
+      alpha: "Assets/Transitions/9.jpg",
+      edge: 1
+    },
+
+    uu: {
+      duration: 3,
+      alpha: "Assets/Transitions/circlewipe-ccw.jpg",
+      edge: 1
+    },
+
+    uuu: {
+      duration: 3,
+      alpha: "Assets/Transitions/circlewipe-cw.jpg",
+      edge: 1
+    },
+
+    uuuu: {
+      duration: 3,
+      alpha: "Assets/Transitions/cw-side.jpg",
       edge: 1
     }
   };
 
   export let sound = {
-    drop: "Audio/Nightclub.ogg"
+    cicada: "Assets/Audio/cicada-sound-64528.mp3",
+    sadEnd: "Assets/Audio/Sad_End.mp3",
+    happyEnd: "Assets/Audio/Happy_End.mp3",
+    beethoven_mvt1: "Assets/Audio/Beethoven_Moonlight_1st_movement.ogg",
+    beethoven_mvt2: "Assets/Audio/Beethoven_Moonlight_2nd_movement.ogg",
+    beethoven_mvt3: "Assets/Audio/Beethoven_Moonlight_3rd_movement.ogg",
   };
 
   export let locations = {
-    benchKun: {
-      name: "Bench Kun",
-      background: "Locations/bg_bench.png"
+    classroom: {
+      name: "classroom",
+      background: "Assets/Locations/classroom.jpg"
+    },
+
+    endSit: {
+      name: "endSit",
+      background: "Assets/Locations/endSit.png"
     }
+    
   };
 
   export let newPositions = {
@@ -33,16 +73,21 @@ namespace Template {
 
   export let characters = {
     narrator: {
-      name: ""
+      name: "Narrator"
     },
     protagonist: {
-      name: ""
+      name: "Ich"
     },
+
+    HerrYamamoto: {
+      name: "Herr Yamamoto"
+    },
+    
     rimuru: {
       name: "Rimuru",
       origin: ƒS.ORIGIN.BOTTOMCENTER,
       pose: {
-        happy: "Characters/cat_happy.png"
+        happy: "Assets/Characters/cat_happy.png"
       }
     }
   }
@@ -67,7 +112,6 @@ namespace Template {
   }
 
   async function buttonFunctionalities(_option: string): Promise<void> {
-    console.log("hi");
     switch (_option) {
       case inGameButtons.save:
         await ƒS.Progress.save();
@@ -120,10 +164,13 @@ namespace Template {
 
   window.addEventListener("load", start);
   function start(_event: Event): void {
-    gameMenu = ƒS.Menu.create(inGameButtons, buttonFunctionalities, "gameMenuCSSclass");
+    gameMenu = ƒS.Menu.create(inGameButtons, buttonFunctionalities, "gameMenu");
     buttonFunctionalities("Close");
     let scenes: ƒS.Scenes = [
-      { scene: GreatRimuru, name: "GreatRimuru", id: "GreatRimuru" }
+      { scene: ChapterOne, name: "ChapterOne", id: "ChapterOne" },
+      { scene: endSit, name: "endSit", id: "endSit" },
+      { scene: standUp, name: "standUp", id: "standUp" }, 
+      
     ];
 
 
