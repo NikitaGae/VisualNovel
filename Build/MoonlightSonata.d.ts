@@ -2,6 +2,9 @@ declare namespace VisualNovel {
     function ChapterOne(): ƒS.SceneReturn;
 }
 declare namespace VisualNovel {
+    function ChapterTwo(): ƒS.SceneReturn;
+}
+declare namespace VisualNovel {
     export import ƒ = FudgeCore;
     export import ƒS = FudgeStory;
     let transition: {
@@ -43,6 +46,10 @@ declare namespace VisualNovel {
         beethoven_mvt1: string;
         beethoven_mvt2: string;
         beethoven_mvt3: string;
+        beethoven_mvt1_rechts: string;
+        beethoven_mvt1_links: string;
+        brakes: string;
+        ambulance: string;
     };
     let locations: {
         classroom: {
@@ -50,6 +57,14 @@ declare namespace VisualNovel {
             background: string;
         };
         endSit: {
+            name: string;
+            background: string;
+        };
+        musicClub: {
+            name: string;
+            background: string;
+        };
+        endChapterOne: {
             name: string;
             background: string;
         };
@@ -68,10 +83,24 @@ declare namespace VisualNovel {
         protagonist: {
             name: string;
         };
-        HerrYamamoto: {
+        herrYamamoto: {
             name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                happy: string;
+            };
         };
-        rimuru: {
+        sara: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                frown: string;
+                open: string;
+                shout: string;
+                smile: string;
+            };
+        };
+        mutter: {
             name: string;
             origin: ƒ.ORIGIN2D;
             pose: {
@@ -79,7 +108,6 @@ declare namespace VisualNovel {
             };
         };
     };
-    function animation(): ƒS.AnimationDefinition;
     let items: {
         name: string;
         description: string;
@@ -87,6 +115,8 @@ declare namespace VisualNovel {
     };
     let dataForSave: {
         nameProtagonist: string;
+        saraScore: number;
+        scoreForAisaka: string;
     };
 }
 declare namespace VisualNovel {

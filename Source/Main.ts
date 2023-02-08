@@ -48,18 +48,35 @@ namespace VisualNovel {
     beethoven_mvt1: "Assets/Audio/Beethoven_Moonlight_1st_movement.ogg",
     beethoven_mvt2: "Assets/Audio/Beethoven_Moonlight_2nd_movement.ogg",
     beethoven_mvt3: "Assets/Audio/Beethoven_Moonlight_3rd_movement.ogg",
+    beethoven_mvt1_rechts: "Assets/Audio/rechts.mp3",
+    beethoven_mvt1_links: "Assets/Audio/links.mp3",
+    brakes: "Assets/Audio/brake.mp3",
+    ambulance: "Assets/Audio/distant-ambulance-siren-6108.mp3"
   };
 
   export let locations = {
     classroom: {
       name: "classroom",
-      background: "Assets/Locations/classroom.jpg"
+      background: "Assets/Locations/classroom.png"
     },
 
     endSit: {
       name: "endSit",
       background: "Assets/Locations/endSit.png"
-    }
+    },
+
+    musicClub: {
+      name: "musicClub",
+      background: "Assets/Locations/musicclub.png"
+    },
+    
+
+    endChapterOne: {
+      name: "endChapterOne",
+      background: "Assets/Locations/endChapterOne.png"
+    },
+    
+
     
   };
 
@@ -75,21 +92,37 @@ namespace VisualNovel {
     narrator: {
       name: "Narrator"
     },
+
     protagonist: {
       name: "Ich"
     },
 
-    HerrYamamoto: {
-      name: "Herr Yamamoto"
-    },
-    
-    rimuru: {
-      name: "Rimuru",
+    herrYamamoto: {
+      name: "Herr Yamamoto",
       origin: ƒS.ORIGIN.BOTTOMCENTER,
       pose: {
-        happy: "Assets/Characters/cat_happy.png"
+        happy: "Assets/Characters/1.png"
       }
-    }
+    },
+
+    sara: {
+      name: "Sara",
+      origin: ƒS.ORIGIN.BOTTOMCENTER,
+      pose: {
+        frown: "Assets/Characters/Miki_PoseD_Summer_Frown.png",
+        open: "Assets/Characters/Miki_PoseD_Summer_Open.png",
+        shout: "Assets/Characters/Miki_PoseD_Summer_Shout.png",
+        smile: "Assets/Characters/Miki_PoseD_Summer_Smile.png",
+      }
+    },
+    
+    mutter: {
+      name: "Mutter",
+      origin: ƒS.ORIGIN.BOTTOMCENTER,
+      pose: {
+        happy: "Assets/Characters/mutter.png"
+      }
+    },
   }
 
   let inGameButtons = {
@@ -101,15 +134,6 @@ namespace VisualNovel {
   let gameMenu: ƒS.Menu;
 
   let menuIsOpen: boolean = true;
-
-  export function animation(): ƒS.AnimationDefinition {
-    return {
-      start: {translation: ƒS.positions.bottomcenter},
-      end: {translation: ƒS.positions.bottomright},
-      duration: 3,
-      playmode: ƒS.ANIMATION_PLAYMODE.LOOP
-    };
-  }
 
   async function buttonFunctionalities(_option: string): Promise<void> {
     switch (_option) {
@@ -159,7 +183,10 @@ namespace VisualNovel {
   }
 
   export let dataForSave = {
-    nameProtagonist: ""
+    nameProtagonist: "",
+    saraScore: 0,
+    scoreForAisaka: "",
+
   };
 
   window.addEventListener("load", start);

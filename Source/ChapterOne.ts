@@ -25,22 +25,11 @@ namespace VisualNovel {
                 P0006: "Was du eine Anfängerin? Dafür hast du aber sehr gut gespielt man hat kaum Fehler gehört und wenn dann hast du sie gut überspielt.",
                 P0007: "haha ja ich spiele seit meiner Kindheit meine Eltern haben mich ein bisschen dazu gedrängt.",
             },
-            Sara: {
-                S0001: ": … danke … puh du hast mich erschrocken ich dachte schon ich kriege jetzt Ärger.",
-                S0002: "Kein Problem ich spiele für den Musikclub und habe gerade ein bisschen geübt, bin noch eine ziemliche Anfängerin, aber ich werde jeden Tag besser.",
-                S0003: "haha Dankeschön, das ist mein Lieblingsstück du spielst auch Klavier oder wieso kennst du dich so viel aus?",
-                S0004: "Wow wieso bist du dann nie dem Musikcl…",
-            },
 
             HerrYamamoto: {
                 L0001: "Es ist kurz vor Schluss kannst du nicht noch bisschen warten? Aber ich will ja nicht so sein."
             }
         };
-
-        let goSpeak = {
-            go: "Einfach wieder gehen",
-            speak: "Man spricht die Person am Klavier an."
-          };
 
         let toilletOrDoc = {
             toillet: "Man sagt man muss kurz aufs Klo",
@@ -49,15 +38,16 @@ namespace VisualNovel {
 
         //dataForSave.nameProtagonist = await ƒS.Speech.getInput();
         //  + " " + dataForSave.nameProtagonist
-        await ƒS.Sound.play(sound.cicada, 0.1, true);
+        //await ƒS.Sound.play(sound.cicada, 0.1, true);
+        ƒS.Sound.fade(sound.cicada, 0.1, 2, true);
         await ƒS.Location.show(locations.classroom);
         await ƒS.update(transition.blink.duration, transition.blink.alpha, transition.blink.edge);
         await ƒS.Speech.tell(characters.narrator, text.Narrator.N0001);
+        await ƒS.Sound.play(sound.cicada, 0.0, true);
         await ƒS.Sound.play(sound.beethoven_mvt1, 0.3, true);
         await ƒS.Speech.tell(characters.narrator, text.Narrator.N0002);
         await ƒS.Speech.tell(characters.narrator, text.Narrator.N0003);
         await ƒS.update();
-        await ƒS.Character.show(characters.rimuru, characters.rimuru.pose.happy, newPositions.bottomright);
         await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0001);
         await ƒS.update();
         ƒS.Speech.clear();
@@ -88,18 +78,25 @@ namespace VisualNovel {
                     case toilletOrDoc.toillet:
                         await ƒS.update();
                         await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0002);
-                        await ƒS.Speech.tell(characters.HerrYamamoto, text.HerrYamamoto.L0001);
-                        await ƒS.Speech.hide();
                         await ƒS.update();
-                        await ƒS.Speech.hide();
+                        await ƒS.Character.show(characters.herrYamamoto, characters.herrYamamoto.pose.happy, newPositions.bottomright);
+                        await ƒS.update();
+                        await ƒS.Speech.tell(characters.herrYamamoto, text.HerrYamamoto.L0001);
+                        await ƒS.update();
+                        await ƒS.Character.hide(characters.herrYamamoto);
+                        await ƒS.update();
                         return "standUp"
                     case toilletOrDoc.doc:
                         await ƒS.update();
                         await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0003);
-                        await ƒS.Speech.tell(characters.HerrYamamoto, text.HerrYamamoto.L0001);
+                        await ƒS.update();
+                        await ƒS.Character.show(characters.herrYamamoto, characters.herrYamamoto.pose.happy, newPositions.bottomright);
+                        await ƒS.update();
+                        await ƒS.Speech.tell(characters.herrYamamoto, text.HerrYamamoto.L0001);
+                        await ƒS.update();
+                        await ƒS.Character.hide(characters.herrYamamoto);
                         await ƒS.Speech.hide();
                         await ƒS.update();
-                        await ƒS.Speech.hide();
                         return "standUp"
                 }
                 return "standUp"                
