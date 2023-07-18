@@ -80,7 +80,7 @@ namespace VisualNovel {
         await ƒS.Speech.tell(characters.protagonist, "Ich danke dir für alles...");
         await ƒS.Location.show(locations.endChapterOne);
 
-        await ƒS.Text.print("<div class='newspaper'><h1>Junge Dame verfällt ihrer <br> Krankheit welche ihren Körper  <br>m schwächt nachdem sie an einem  <br> Konzert in voller Länge gespielt  <br> hat</h1></div>");
+        await ƒS.Text.print("<div class='newspaper'><h1>Junge Dame verfällt ihrer <br> Krankheit welche ihren Körper  <br> schwächt nachdem sie an einem  <br> Konzert in voller Länge gespielt  <br> hat</h1></div>");
 
         await ƒS.Speech.tell(characters.narrator, "Der Abend ging als Tragödie in die Geschichte ein und lange wurde noch darüber geredet. Doch irgendwann wurde geschwiegen und vergessen... außer einer. Der Protagonist erinnerte sich immer an Sara, wenn er den Mond sah... es war als würde er zu ihm sprechen.");
         await ƒS.Speech.tell(characters.narrator, "Der Protagonist konnte ihn nicht verstehen, aber er wusste, dass Sara ihm eine Nachricht schickte. Eine Nachricht, die ihn wieder zur Musik bringen sollte.");
