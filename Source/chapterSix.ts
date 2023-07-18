@@ -76,7 +76,10 @@ namespace VisualNovel {
                 await ƒS.update();
                 await ƒS.Character.animate(characters.sara, characters.sara.pose.shout, animate("rightOut"));
                 await ƒS.Character.hide(characters.sara);
-                await ƒS.update();    
+                ƒS.Sound.fade(sound.door, 0.3, 0, true);
+                await ƒS.update(1);
+                ƒS.Sound.fade(sound.door, 0.0, 0, true);
+                await ƒS.update();   
                 return "chapterSeven";
             case decision.plus:
                 dataForSave.saraScore += 20;
@@ -110,6 +113,9 @@ namespace VisualNovel {
                 await ƒS.update();
                 await ƒS.Character.animate(characters.sara, characters.sara.pose.shout, animate("rightOut"));
                 await ƒS.Character.hide(characters.sara);
+                ƒS.Sound.fade(sound.door, 0.3, 0, true);
+                await ƒS.update(1);
+                ƒS.Sound.fade(sound.door, 0.0, 0, true);
                 await ƒS.update();
                 return "chapterSeven";
         };

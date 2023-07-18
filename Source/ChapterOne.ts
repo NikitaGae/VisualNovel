@@ -50,6 +50,7 @@ namespace VisualNovel {
         await ƒS.Speech.tell(characters.narrator, text.Narrator.N0002);
         await ƒS.Speech.tell(characters.narrator, text.Narrator.N0003);
         await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0001);
+
         ƒS.Speech.clear();
         let dialogueElement;
         let toilletOrDocElement;

@@ -25,17 +25,22 @@ canvas {
 }
 
 dialog[type="text"] {
-  width: 50%;
-  height: 50%;
-  background-image: url("Images/newspaper.jpg");
+  bottom: 23%;
+  width: 70%;
+  height: 70%;
+  background-image: url("Assets/Images/newspaper.jpg");
   background-size: 100% 100%; 
 }
 
 .newspaper {
-  width: 70%;
+  font-family: 'Times New Roman', serif;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: clip;
+  width: 20%;
   position: fixed;
-  left: 20%;
-  top: 35%
+  left: 33%;
+  top: 30%;
 }
 
 
