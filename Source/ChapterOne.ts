@@ -1,5 +1,5 @@
 namespace VisualNovel {
-    export async function ChapterOne(): ƒS.SceneReturn {
+    export async function chapterOne(): ƒS.SceneReturn {
         console.log("Chapter 1");
 
         let text = {
@@ -36,20 +36,20 @@ namespace VisualNovel {
             doc: "Es geht mir nicht gut könnte ich zum Schularzt"
         };
 
-        //dataForSave.nameProtagonist = await ƒS.Speech.getInput();
-        //  + " " + dataForSave.nameProtagonist
-        //await ƒS.Sound.play(sound.cicada, 0.1, true);
         ƒS.Sound.fade(sound.cicada, 0.1, 2, true);
+        await ƒS.Location.show(locations.headphones);
+        await ƒS.update();
+        await ƒS.Speech.tell("", "");
         await ƒS.Location.show(locations.classroom);
         await ƒS.update(transition.blink.duration, transition.blink.alpha, transition.blink.edge);
         await ƒS.Speech.tell(characters.narrator, text.Narrator.N0001);
-        await ƒS.Sound.play(sound.cicada, 0.0, true);
+        await ƒS.update();
+        ƒS.Sound.fade(sound.cicada, 0.0, 2, true);
         await ƒS.Sound.play(sound.beethoven_mvt1, 0.3, true);
+        await ƒS.update();
         await ƒS.Speech.tell(characters.narrator, text.Narrator.N0002);
         await ƒS.Speech.tell(characters.narrator, text.Narrator.N0003);
-        await ƒS.update();
         await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0001);
-        await ƒS.update();
         ƒS.Speech.clear();
         let dialogueElement;
         let toilletOrDocElement;
@@ -63,7 +63,6 @@ namespace VisualNovel {
 
         switch(dialogueElement) {
             case ignoreOrStandUP.ignore:
-                await ƒS.update();
                 await ƒS.Speech.tell(characters.narrator, text.Narrator.N0004);
                 await ƒS.Speech.hide();
                 await ƒS.update();
@@ -73,33 +72,30 @@ namespace VisualNovel {
                 await ƒS.update();
                 await ƒS.Speech.tell(characters.narrator, text.Narrator.N0005);
                 toilletOrDocElement = await ƒS.Menu.getInput(toilletOrDoc, "decisionClass");
-
                 switch(toilletOrDocElement) {
                     case toilletOrDoc.toillet:
-                        await ƒS.update();
+                        dataForSave.saraScore += 20;
                         await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0002);
-                        await ƒS.update();
                         await ƒS.Character.show(characters.herrYamamoto, characters.herrYamamoto.pose.happy, newPositions.bottomright);
+                        await ƒS.Character.animate(characters.herrYamamoto, characters.herrYamamoto.pose.happy, animate("outToRight"));
                         await ƒS.update();
                         await ƒS.Speech.tell(characters.herrYamamoto, text.HerrYamamoto.L0001);
-                        await ƒS.update();
+                        await ƒS.Character.animate(characters.herrYamamoto, characters.herrYamamoto.pose.happy, animate("rightOut"));
                         await ƒS.Character.hide(characters.herrYamamoto);
                         await ƒS.update();
                         return "standUp"
                     case toilletOrDoc.doc:
-                        await ƒS.update();
                         await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0003);
-                        await ƒS.update();
-                        await ƒS.Character.show(characters.herrYamamoto, characters.herrYamamoto.pose.happy, newPositions.bottomright);
+                        await ƒS.Character.animate(characters.herrYamamoto, characters.herrYamamoto.pose.happy, animate("outToRight"));
                         await ƒS.update();
                         await ƒS.Speech.tell(characters.herrYamamoto, text.HerrYamamoto.L0001);
                         await ƒS.update();
+                        await ƒS.Character.animate(characters.herrYamamoto, characters.herrYamamoto.pose.happy, animate("rightOut"));
                         await ƒS.Character.hide(characters.herrYamamoto);
                         await ƒS.Speech.hide();
                         await ƒS.update();
                         return "standUp"
-                }
-                return "standUp"                
+                }              
         };
     }
 }

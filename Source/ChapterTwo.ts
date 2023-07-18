@@ -1,15 +1,13 @@
 namespace VisualNovel {
-    export async function ChapterTwo(): ƒS.SceneReturn {
+    export async function chapterTwo(): ƒS.SceneReturn {
         console.log("Chapter 2");
 
         let text = {
             Narrator: {
                 N0001: "Ein Tag ist vergangen, nachdem Sara ins Krankenhaus gegangen ist.",
-                N0002: "Der Protagonist begibt sich auf den Weg in das Musikzimmer. Was findet man?",
-                N0003: "Man geht zum Lehrer und fragt, ob man die Schülerkarte zu ihr bringen kann",
-                N0004: "Der Protagonist begibt sich daraufhin auf den Weg zu Sara.",
-                N0005: "Die Mutter macht die Tür auf. Und schaut verwundert.",
-
+                N0002: "Man geht zum Lehrer und fragt, ob man die Schülerkarte zu ihr bringen kann",
+                N0003: "Der Protagonist begibt sich daraufhin auf den Weg zu Sara.",
+                N0004: "Die Mutter macht die Tür auf. Und schaut verwundert.",
             },
 
             Protagonist: {
@@ -22,7 +20,6 @@ namespace VisualNovel {
                 P0007: "Wie geht es Sara nach dem Vorfall?",
                 P0008: "Oh ja sehr gerne!",
                 P0009: "Alles klar bis morgen!"
-
             },
 
             Mutter: {
@@ -36,13 +33,56 @@ namespace VisualNovel {
 
             }
         };
-
-        await ƒS.update();
         await ƒS.Location.show(locations.classroom);
+        await ƒS.update(transition.blink.duration, transition.blink.alpha, transition.blink.edge);
         await ƒS.Speech.tell(characters.narrator, text.Narrator.N0001);
         await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0001);
+        await ƒS.Speech.tell(characters.narrator, characters.protagonist.name + "begibt sich auf den Weg in das Musikzimmer. Was findet man?");
         await ƒS.update();
-
-            
+        await ƒS.Location.show(locations.musicClub);
+        await ƒS.update();
+        await ƒS.Speech.tell(characters.narrator, characters.protagonist.name + " nach einem kurzen Blick in den Musikzimmer findet man die Schülerkarte von Sara auf dem Boden");
+        ƒS.Inventory.add(items.studendCard);
+        await ƒS.update();
+        await ƒS.Speech.tell(characters.narrator, text.Narrator.N0002);
+        await ƒS.update();
+        ƒS.Sound.fade(sound.talking, 0.3, 0, true);
+        await ƒS.Location.show(locations.schulgang);
+        await ƒS.update();
+        await ƒS.Character.animate(characters.herrYamamoto, characters.herrYamamoto.pose.happy, animate("outToRight"));
+        await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0002);
+        await ƒS.Speech.tell(characters.herrYamamoto, text.HerrYamamoto.L0001);
+        await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0003);
+        await ƒS.Character.animate(characters.herrYamamoto, characters.herrYamamoto.pose.happy, animate("rightOut"));
+        await ƒS.Character.hide(characters.herrYamamoto);
+        ƒS.Sound.fade(sound.talking, 0.0, 0, true);
+        await ƒS.Speech.tell(characters.narrator, text.Narrator.N0003);
+        await ƒS.update();
+        await ƒS.Location.show(locations.vorDemHausVonSara);
+        await ƒS.update(1);
+        await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0005);
+        ƒS.Sound.fade(sound.doorbell, 0.3, 0, true);
+        await ƒS.update(2);
+        ƒS.Sound.fade(sound.doorbell, 0.0, 0, true);
+        await ƒS.update(1);
+        ƒS.Sound.fade(sound.door, 0.3, 0, true);
+        await ƒS.update(1);
+        ƒS.Sound.fade(sound.door, 0.0, 0, true);
+        await ƒS.update();
+        await ƒS.Character.animate(characters.mutter, characters.mutter.pose.happy, animate("outToRight"));
+        await ƒS.update();
+        await ƒS.Speech.tell(characters.narrator, text.Narrator.N0004);
+        await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0006);
+        await ƒS.Speech.tell(characters.mutter, text.Mutter.M0001);
+        await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0007);
+        await ƒS.Speech.tell(characters.mutter, text.Mutter.M0002);
+        await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0008);
+        await ƒS.Speech.tell(characters.mutter, text.Mutter.M0003);
+        await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0009);
+        await ƒS.update();
+        await ƒS.Character.animate(characters.mutter, characters.mutter.pose.happy, animate("rightOut"));
+        await ƒS.Character.hide(characters.mutter);
+        await ƒS.update();
+        return "chapterThree"
         };
     }

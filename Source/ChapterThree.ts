@@ -1,44 +1,6 @@
 namespace VisualNovel {
-    export async function ChapterThree(): ƒS.SceneReturn {
+    export async function chapterThree(): ƒS.SceneReturn {
         console.log("Chapter 3");
-
-
-/* "Direkt nach der Schule macht sich der Protagonist auf den Weg zu Sara. Auf dem Weg zum Bahnhof überlegt er noch ob er eine Kleinigkeit mitnehmen soll.
-Protagonist: Ob sie sich über ein kleines Geschenk freuen würde? Wir kennen uns noch nicht so lange vielleicht sollte ich es einfach lassen.
-ENTSCHEIDUNG
-Nichts mitbringen
-Protagonist: Ich schätze wohl ich nehme nichts mit ich glaube es ist noch zu früh ihr etwas zu schenken.
-Blumen
-Protagonist: hmmm… Blumen bringt man sonst immer bei einem Krankheitsbesuch mit ist nicht zu viel und passend dann nehme ich wohl die.
-Gewonnener Klavierschlüsselanhänger
-Protagonist: Ich könnte dahinten auch in eine Spielhalle gehen und etwas Kleines gewinnen die Dinger sind sowieso super easy.
-Also ging der Protagonist los in die Spielhalle, um etwas interessantes Kleines zu gewinnen. 
-Protagonist: Ohh ein Schlüsselanhänger mit einem kleinen Klavier dran, ob Sara das Gefallen wird, immerhin spielt sie Klavier. Vor allem kann ich es dann vor den Eltern verstecken damit es für sie und mich nicht zu peinlich wird.
-VIELLEICHT MINISPIEL SON KRAN DING FALLS MAN VERLIERT DANN LÄUFT ER OHNE GESCHENK ZU DER
-
-Der Protagonist fischte den Schlüsselanhänger erfolgreich aus dem Automaten. Und machte sich mit hoher Freude auf den Weg zu Sara. Nach 20min war er dann auch vor ihrer Tür atmet nochmal tief ein und klingelt dann an ihrer Haustür.
-
-Mutter: Ah Hallo mein Junge Sara hat mir noch nicht deinen Namen gesagt, komm rein
-Protagonist: Oh das ist kein Problem, ich heiße Protagonist, und spiele auch gerne Klavier.
-Mutter: Nett dich kennen zu lernen Protagonist, komm herein, Saras Zimmer ist die Treppe hoch und dann rechts.
-Protagonist: Alles klar danke schön!
-Der Protagonist läuft wie beschrieben die Treppe hoch, während er hochläuft, bemerkt er die ein oder andere Schallplatte an der Wand. Der Protagonist steht vor Saras Tür und klopft dann nach ein bisschen unsicherem warten an.
-Sara: Ja bitte?
-Protagonist: Guten Abend Sara, ich dachte ich komm dich mal besuchen da ich auch deine Schülerkarte zu bringen musste da ich sie im Musikraum gefunden habe. Vorhin ist mir dann auch aufgefallen das ich nie meinen Namen gesagt habe ich heiße Protagonist. 
-Sara: Schön dich kennen zu lernen Protagonist.
-Protagonist: Nach dem du umgekippt bist habe ich mich erstmal erschrocken, geht es dir jetzt nach den zwei Tagen besser?
-Sara:  Joa mir geht’s den Umständen entsprechend. (Fake lächeln) Die zwei Tage haben gut getan ich hoffe ich kann bald wieder in die Schule.
-Protagonist: Aber dein Klavierspiel an dem Tage war wundervoll hab mich sogar extra aus dem Klassenzimmer rausgemogelt. (Lachendes Gesicht) Ich spiele selbst Klavier aber so ein normaler Song so schön klingen zulassen ist dann doch zu schwer.
-Sara: Der Song ist echt leicht, aber ich spiele ihn schon seit meiner Kindheit so gerne, es klingt so, als würde der Himmel voller Sternschnuppen sein und jede einzelne würde ihre eigene Geschichte erzählen.
-Protagonist: Es gibt so viele Sprachen auf dieser Welt aber Musik verstehen wir am Ende dann doch immer egal aus welchem Land es auch kommen mag.
-Sara: Ich spiele demnächst bei einem Konzert mit und habe meine Proben verpasst aufgrund meines Unfalls, mir ist das Konzert sehr wichtig da du auch Klavier spielen kannst wollen wir zu zweit üben damit das Konzert von meiner Seite nicht ein kompletter Reinfall wird.
-Protagonist: Das würde mich freuen mit dir zu Proben vielleicht kann ich, während den Proben noch für mich paar Sachen lernen. Das ist mir etwas peinlich, aber ich habe dir etwas mitgebracht (HIER DAS MACHEN FÜR WAS MAN SICH VORHER ENTSCHIEDEN HAT). Deine Schülerkarte habe ich hier auch dabei die hast du im Musikzimmer verloren. 
-Sara: Oh vielen Dank ich stell mir das auf mein Klavier.
-Protagonist: Ahja Wo wollen wir dann zusammen proben?
-Sara: Wir können bei uns Proben da wir hier ein Klavier haben. Wir können am Samstag anfangen. 
-Protagonist: Alles klar dann komm ich am Samstag wieder vorbei. Bis Samstag tschüss und gute Besserung.
-Sara: Dankeschön bis Samstag." */
-
 
         let text = {
             Narrator: {
@@ -46,20 +8,39 @@ Sara: Dankeschön bis Samstag." */
                 N0002: "Also ging der Protagonist los in die Spielhalle, um etwas interessantes Kleines zu gewinnen. ",
                 N0003: "Der Protagonist fischte den Schlüsselanhänger erfolgreich aus dem Automaten. Und machte sich mit hoher Freude auf den Weg zu Sara.",
                 N0004: "Nach 20min war er dann auch vor ihrer Tür atmet nochmal tief ein und klingelt dann an ihrer Haustür.",
-
+                N0005: "Der Protagonist läuft wie beschrieben die Treppe hoch, während er hochläuft, bemerkt er die ein oder andere Schallplatte an der Wand.",
+                N0006: "Der Protagonist steht vor Saras Tür und klopft dann nach ein bisschen unsicherem warten an."
             },
 
             Protagonist: {
                 P0001: "Ob sie sich über ein kleines Geschenk freuen würde? Wir kennen uns noch nicht so lange vielleicht sollte ich es einfach lassen.",
                 P0002: "Ich schätze wohl ich nehme nichts mit ich glaube es ist noch zu früh ihr etwas zu schenken.",
                 P0003: "hmmm… Blumen bringt man sonst immer bei einem Krankheitsbesuch mit ist nicht zu viel und passend dann nehme ich wohl die.",
-                P0004: "Hmmm … ich sollte glaube ich erst mal mit dem Zug eine Station fahren dann kann ich laufen.",
-                P0005: "Ich könnte dahinten auch in eine Spielhalle gehen und etwas Kleines gewinnen die Dinger sind sowieso super easy.",
-                P0006: "Ohh ein Schlüsselanhänger mit einem kleinen Klavier dran, ob Sara das Gefallen wird, immerhin spielt sie Klavier.",
-                P0007: "Vor allem kann ich es dann vor den Eltern verstecken damit es für sie und mich nicht zu peinlich wird.",
-                P0008: "Oh das ist kein Problem, ich heiße Protagonist, und spiele auch gerne Klavier.",
-                P0009: "Alles klar danke schön!"
-
+                P0004: "Ich könnte dahinten auch in eine Spielhalle gehen und etwas Kleines gewinnen die Dinger sind sowieso easy.",
+                P0005: "Ohh ein Schlüsselanhänger mit einem kleinen Klavier dran, ob Sara das Gefallen wird, immerhin spielt sie Klavier.",
+                P0006: "Vor allem kann ich es dann vor den Eltern verstecken damit es für sie und mich nicht zu peinlich wird.",
+                P0009: "Alles klar danke schön!",
+                P0010: "Hallo Sara, ich dachte ich komm dich mal besuchen da ich auch deine Schülerkarte zu bringen musste da ich sie im Musikraum gefunden habe.",
+                P0011: "Nach dem du umgekippt bist habe ich mich erstmal erschrocken, geht es dir jetzt nach den zwei Tagen besser?",
+                P0012: "Aber dein Klavierspiel an dem Tage war wundervoll hab mich sogar extra aus dem Klassenzimmer rausgemogelt.",
+                P0013: "Ich spiele selbst Klavier aber so ein normaler Song so schön klingen zulassen ist dann doch zu schwer.",
+                P0014: "Es gibt so viele Sprachen auf dieser Welt aber Musik verstehen wir am Ende dann doch immer egal aus welchem Land es auch kommen mag.",
+                P0015: "Das würde mich freuen mit dir zu Proben vielleicht kann ich, während den Proben noch für mich paar Sachen lernen. Das ist mir etwas peinlich, aber ich habe dir etwas mitgebracht",
+                P0016: "Deine Schülerkarte habe ich hier auch dabei die hast du im Musikzimmer verloren.",
+                P0017: "Ahja Wo wollen wir dann zusammen proben?",
+                P0018: "Alles klar dann komm ich am Samstag wieder vorbei. Bis Samstag tschüss und gute Besserung.",
+            },
+            
+            Sara: {
+                S0001: "Ja bitte?",
+                S0002: "Ohh Dankeschön das ist aber sehr nett von dir.",
+                S0003: "Joa mir geht’s den Umständen entsprechend. Die zwei Tage haben gut getan ich hoffe ich kann bald wieder in die Schule.",
+                S0004: "Der Song ist echt leicht, aber ich spiele ihn schon seit meiner Kindheit so gerne, es klingt so, als würde der Himmel voller Sternschnuppen sein und jede einzelne würde ihre eigene Geschichte erzählen.",
+                S0005: "Ich spiele demnächst bei einem Konzert mit und habe meine Proben verpasst aufgrund meines Unfalls,",
+                S0006: "mir ist das Konzert sehr wichtig da du auch Klavier spielen kannst wollen wir zu zweit üben damit das Konzert von meiner Seite nicht ein kompletter Reinfall wird.",
+                S0007: "Oh vielen Dank.",
+                S0008: "Wir können bei uns Proben da wir hier ein Klavier haben. Wir können am Samstag anfangen. ",
+                S0009: "Dankeschön bis Samstag."
             },
 
             Mutter: {
@@ -67,17 +48,154 @@ Sara: Dankeschön bis Samstag." */
                 M0002: "Nett dich kennen zu lernen Protagonist, komm herein, Saras Zimmer ist die Treppe hoch und dann rechts.",
             },
 
-            HerrYamamoto: {
-                L0001: "Hast du nicht letztens erst für sie Hilfe gerufen? Klar kannst du es ihr vorbeibringen kannst direkt ein Krankheitsbesuch draus machen. Ich schreib dir ihre Adresse auf.",
-            }
         };
 
-        await ƒS.update();
         await ƒS.Location.show(locations.classroom);
+        await ƒS.update(transition.blink.duration, transition.blink.alpha, transition.blink.edge);
+      
         await ƒS.Speech.tell(characters.narrator, text.Narrator.N0001);
         await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0001);
-        await ƒS.update();
+        let dialogueElement;
 
-            
+        let present = {
+            nothing: "Man nimmt nichts mit.",
+            flowers: "Man nimmt Blumen mit.",
+            keychain: "Man nimmt einen Schlüsselanhänger mit.",
+        };
+
+        dialogueElement = await ƒS.Menu.getInput(present, "decisionClass");
+
+        switch(dialogueElement) {
+            case present.nothing:
+                await ƒS.update();
+                await ƒS.Location.show(locations.stadtInneren);
+                await ƒS.update();
+                await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0002);
+                await ƒS.update();
+                await ƒS.Location.show(locations.vorDemHausVonSara);
+                await ƒS.update();
+                await ƒS.Speech.tell(characters.narrator, text.Narrator.N0004);
+                ƒS.Sound.fade(sound.doorbell, 0.3, 0, true);
+                await ƒS.update(2);
+                ƒS.Sound.fade(sound.doorbell, 0.0, 0, true);
+                await ƒS.update(1);
+                ƒS.Sound.fade(sound.door, 0.3, 0, true);
+                await ƒS.update(1);
+                ƒS.Sound.fade(sound.door, 0.0, 0, true);
+                await ƒS.update();
+                await ƒS.Character.animate(characters.mutter, characters.mutter.pose.happy, animate("outToRight"));
+                await ƒS.update();
+                await ƒS.Speech.tell(characters.mutter, text.Mutter.M0001);
+                await ƒS.update();
+                break;
+            case present.flowers:
+                dataForSave.saraScore += 10;
+                await ƒS.update();
+                await ƒS.Location.show(locations.stadtInneren);
+                await ƒS.update();
+                await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0003);
+                await ƒS.update();
+                await ƒS.Location.show(locations.blumenladen);
+                await ƒS.Speech.tell(characters.narrator, characters.protagonist.name + " begab sich in einen Blumenladen und kaufte einen Strauß Blumen");
+                ƒS.Inventory.add(items.flowers);
+                await ƒS.update();
+                await ƒS.Location.show(locations.vorDemHausVonSara);
+                await ƒS.update();
+                await ƒS.Speech.tell(characters.narrator, text.Narrator.N0004);
+                ƒS.Sound.fade(sound.doorbell, 0.3, 0, true);
+                await ƒS.update(2);
+                ƒS.Sound.fade(sound.doorbell, 0.0, 0, true);
+                await ƒS.update(1);
+                ƒS.Sound.fade(sound.door, 0.3, 0, true);
+                await ƒS.update(1);
+                ƒS.Sound.fade(sound.door, 0.0, 0, true);
+                await ƒS.update();
+                await ƒS.Character.animate(characters.mutter, characters.mutter.pose.happy, animate("outToRight"));
+                await ƒS.update();
+                await ƒS.Speech.tell(characters.mutter, text.Mutter.M0001);
+                break;
+            case present.keychain:
+                dataForSave.saraScore += 20;
+                await ƒS.update();
+                await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0004);
+                await ƒS.update();
+                await ƒS.Speech.tell(characters.narrator, characters.protagonist.name + " begab sich in die Spielhalle");
+                ƒS.Inventory.add(items.keychain);
+                await ƒS.update();
+                await ƒS.Location.show(locations.spielhalle);
+                await ƒS.update();
+                await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0005);
+                await ƒS.update();
+                await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0006);
+                await ƒS.update();
+                await ƒS.Speech.tell(characters.narrator, text.Narrator.N0003);
+                await ƒS.update();
+                await ƒS.Location.show(locations.vorDemHausVonSara);
+                await ƒS.update();
+                await ƒS.Speech.tell(characters.narrator, text.Narrator.N0004);
+                ƒS.Sound.fade(sound.doorbell, 0.3, 0, true);
+                await ƒS.update(2);
+                ƒS.Sound.fade(sound.doorbell, 0.0, 0, true);
+                await ƒS.update(1);
+                ƒS.Sound.fade(sound.door, 0.3, 0, true);
+                await ƒS.update(1);
+                ƒS.Sound.fade(sound.door, 0.0, 0, true);
+                await ƒS.update();
+                await ƒS.Character.animate(characters.mutter, characters.mutter.pose.happy, animate("outToRight"));
+                await ƒS.update();
+                await ƒS.Speech.tell(characters.mutter, text.Mutter.M0001);
+                break;
+        };
+
+        await ƒS.Speech.tell(characters.protagonist, "Oh das ist kein Problem, ich heiße" + characters.protagonist.name + ", und spiele auch gerne Klavier.");
+        await ƒS.Speech.tell(characters.mutter, "Nett dich kennen zu lernen" + characters.protagonist.name + ", komm herein, Saras Zimmer ist die Treppe hoch und dann rechts.");
+        await ƒS.update();
+        await ƒS.Character.animate(characters.mutter, characters.mutter.pose.happy, animate("rightOut"));
+        await ƒS.Character.hide(characters.mutter);
+        await ƒS.update();
+        await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0009);
+        await ƒS.update();
+        await ƒS.Location.show(locations.saraHausTreppe);
+        await ƒS.update();
+        await ƒS.Speech.tell(characters.narrator, characters.protagonist.name + " läuft wie beschrieben die Treppe hoch, während er hochläuft, bemerkt er die ein oder andere Schallplatte an der Wand.");
+        await ƒS.update();
+        await ƒS.Speech.tell(characters.narrator, characters.protagonist.name + " Protagonist steht vor Saras Tür und klopft dann nach ein bisschen unsicherem warten an.");
+        await ƒS.update();
+        ƒS.Sound.fade(sound.knocking, 0.3, 0, true);
+        await ƒS.update(1);
+        ƒS.Sound.fade(sound.knocking, 0.0, 0, true);
+        await ƒS.update();
+        await ƒS.Character.animate(characters.sara, characters.sara.pose.smile, animate("outToRight"));
+        await ƒS.update();
+        await ƒS.Speech.tell(characters.sara, text.Sara.S0001);
+        await ƒS.update();
+        ƒS.Sound.fade(sound.door, 0.3, 0, true);
+        await ƒS.update(1);
+        ƒS.Sound.fade(sound.door, 0.0, 0, true);
+        await ƒS.update();
+        await ƒS.Location.show(locations.sarasZimmer);
+        await ƒS.update();
+        await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0010);
+        await ƒS.Speech.tell(characters.sara, text.Sara.S0002);
+        await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0011);
+        await ƒS.Speech.tell(characters.sara, text.Sara.S0003);
+        await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0012);
+        await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0013);
+        await ƒS.Speech.tell(characters.sara, text.Sara.S0004);
+        await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0014);
+        await ƒS.Speech.tell(characters.sara, text.Sara.S0005);
+        await ƒS.Speech.tell(characters.sara, text.Sara.S0006);
+        await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0015);
+        await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0016);
+        await ƒS.Speech.tell(characters.sara, text.Sara.S0007);
+        await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0017);
+        await ƒS.Speech.tell(characters.sara, text.Sara.S0008);
+        await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0018);
+        await ƒS.Speech.tell(characters.sara, text.Sara.S0009);
+        await ƒS.update();
+        await ƒS.Character.animate(characters.sara, characters.sara.pose.smile, animate("rightOut"));
+        await ƒS.Character.hide(characters.sara);
+        await ƒS.update();
+        return "chapterFour"
         };
     }

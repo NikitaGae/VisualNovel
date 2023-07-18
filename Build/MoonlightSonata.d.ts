@@ -1,8 +1,26 @@
 declare namespace VisualNovel {
-    function ChapterOne(): ƒS.SceneReturn;
+    function chapterFive(): ƒS.SceneReturn;
 }
 declare namespace VisualNovel {
-    function ChapterTwo(): ƒS.SceneReturn;
+    function ChapterFour(): ƒS.SceneReturn;
+}
+declare namespace VisualNovel {
+    function chapterOne(): ƒS.SceneReturn;
+}
+declare namespace VisualNovel {
+    function chapterSeven(): ƒS.SceneReturn;
+}
+declare namespace VisualNovel {
+    function chapterSix(): ƒS.SceneReturn;
+}
+declare namespace VisualNovel {
+    function chapterThree(): ƒS.SceneReturn;
+}
+declare namespace VisualNovel {
+    function chapterTwo(): ƒS.SceneReturn;
+}
+declare namespace VisualNovel {
+    function endSit(): ƒS.SceneReturn;
 }
 declare namespace VisualNovel {
     export import ƒ = FudgeCore;
@@ -18,22 +36,7 @@ declare namespace VisualNovel {
             alpha: string;
             edge: number;
         };
-        u: {
-            duration: number;
-            alpha: string;
-            edge: number;
-        };
-        uu: {
-            duration: number;
-            alpha: string;
-            edge: number;
-        };
-        uuu: {
-            duration: number;
-            alpha: string;
-            edge: number;
-        };
-        uuuu: {
+        circle: {
             duration: number;
             alpha: string;
             edge: number;
@@ -50,6 +53,10 @@ declare namespace VisualNovel {
         beethoven_mvt1_links: string;
         brakes: string;
         ambulance: string;
+        talking: string;
+        doorbell: string;
+        door: string;
+        knocking: string;
     };
     let locations: {
         classroom: {
@@ -64,7 +71,63 @@ declare namespace VisualNovel {
             name: string;
             background: string;
         };
+        dreiTueren: {
+            name: string;
+            background: string;
+        };
         endChapterOne: {
+            name: string;
+            background: string;
+        };
+        blumenladen: {
+            name: string;
+            background: string;
+        };
+        saraHausTreppe: {
+            name: string;
+            background: string;
+        };
+        sarasZimmer: {
+            name: string;
+            background: string;
+        };
+        schulgang: {
+            name: string;
+            background: string;
+        };
+        spielhalle: {
+            name: string;
+            background: string;
+        };
+        stadtInneren: {
+            name: string;
+            background: string;
+        };
+        vorDemHausVonSara: {
+            name: string;
+            background: string;
+        };
+        zimmerMitKlavierBeiSara: {
+            name: string;
+            background: string;
+        };
+        konzertHalle: {
+            name: string;
+            background: string;
+        };
+        krankenhauszimmer: {
+            name: string;
+            background: string;
+        };
+        credits: {
+            name: string;
+            background: string;
+        };
+        headphones: {
+            name: string;
+            background: string;
+        };
+        gameOver: {
             name: string;
             background: string;
         };
@@ -98,6 +161,10 @@ declare namespace VisualNovel {
                 open: string;
                 shout: string;
                 smile: string;
+                blush: string;
+                smileCasual: string;
+                frownCasual: string;
+                shoutCasual: string;
             };
         };
         mutter: {
@@ -108,19 +175,37 @@ declare namespace VisualNovel {
             };
         };
     };
+    let animations: {
+        rightOut: string;
+        outToRight: string;
+    };
+    function animate(_animation: string): ƒS.AnimationDefinition;
     let items: {
-        name: string;
-        description: string;
-        static: string;
+        keychain: {
+            name: string;
+            description: string;
+            image: string;
+            static: boolean;
+        };
+        flowers: {
+            name: string;
+            description: string;
+            image: string;
+            static: boolean;
+        };
+        studendCard: {
+            name: string;
+            description: string;
+            image: string;
+            static: boolean;
+        };
     };
     let dataForSave: {
         nameProtagonist: string;
         saraScore: number;
-        scoreForAisaka: string;
+        scoreForSara: string;
+        disputeWithSara: boolean;
     };
-}
-declare namespace VisualNovel {
-    function endSit(): ƒS.SceneReturn;
 }
 declare namespace VisualNovel {
     function standUp(): ƒS.SceneReturn;

@@ -15,16 +15,16 @@ namespace VisualNovel {
                 P0004: "haha ja ich spiele seit meiner Kindheit meine Eltern haben mich ein bisschen dazu gedrängt.",
             },
             Sara: {
-                S0001: ": … danke … puh du hast mich erschrocken ich dachte schon ich kriege jetzt Ärger. Wie heißt du?",
+                S0001: ": … danke … puh du hast mich erschrocken ich dachte schon ich kriege jetzt Ärger. Wie heißt du eigentlich?",
                 S0002: "Kein Problem ich spiele für den Musikclub und habe gerade ein bisschen geübt, bin noch eine ziemliche Anfängerin, aber ich werde jeden Tag besser.",
                 S0003: "haha Dankeschön, das ist mein Lieblingsstück du spielst auch Klavier oder wieso kennst du dich so viel aus?",
                 S0004: "Wow wieso bist du dann nie dem Musikcl…",
             },
         };
-        
+
         // await ƒS.Sound.play(sound.beethoven_mvt1, 0.3, true);
-        await ƒS.Location.show(locations.endSit);
-        await ƒS.update();
+        await ƒS.Location.show(locations.dreiTueren);
+        await ƒS.update(transition.blink.duration, transition.blink.alpha, transition.blink.edge);
 
         let direction;
 
@@ -34,102 +34,106 @@ namespace VisualNovel {
             left: "Links"
         };
 
-        let solution: string[] = [directionsPossibilities.straight,directionsPossibilities.right, directionsPossibilities.left, directionsPossibilities.right, directionsPossibilities.straight, directionsPossibilities.straight, directionsPossibilities.right]
+        let solution: string[] = [directionsPossibilities.straight, directionsPossibilities.right, directionsPossibilities.left, directionsPossibilities.right, directionsPossibilities.straight, directionsPossibilities.straight, directionsPossibilities.right]
         let solutionCounter: number = 0;
 
-        minigame();
+        ƒS.Sound.fade(sound.beethoven_mvt1_rechts, 0, 0, true);
+        //await ƒS.update(transition.blink.duration, transition.blink.alpha, transition.blink.edge);
 
-        async function minigame(): Promise<String> {
-            ƒS.Sound.fade(sound.beethoven_mvt1_rechts, 0, 0, true);
-            //Hier kommt das Drei Türen/Gänge Hintergrund Bild
-            //await ƒS.Location.show(locations.hallway);
-            //await ƒS.update(transition.blink.duration, transition.blink.alpha, transition.blink.edge);
-            changeMusic();
+        while (solutionCounter < solution.length) {
 
-            if (solutionCounter< solution.length) {
+            direction = await ƒS.Menu.getInput(directionsPossibilities, "decisionClass");
 
-                direction = await ƒS.Menu.getInput(directionsPossibilities, "decisionClass");
-        
-                switch(direction) {
+            switch (direction) {
 
-                    case directionsPossibilities.right:
-                        if (directionsPossibilities.right === solution[solutionCounter]) {
-                            solutionCounter++;
-                        } else {
-                            solutionCounter = 0;
-                        }
-                        break;
+                case directionsPossibilities.right:
+                    if (directionsPossibilities.right === solution[solutionCounter]) {
+                        solutionCounter++;
+                        changeMusic("Rechts");
+                    } else {
+                        solutionCounter = 0;
+                    }
+                    break;
 
-                    case directionsPossibilities.straight:
-                        if (directionsPossibilities.straight === solution[solutionCounter]) {
-                            solutionCounter++;
-                        } else {
-                            solutionCounter = 0;
-                        }
-                        break;  
+                case directionsPossibilities.straight:
+                    if (directionsPossibilities.straight === solution[solutionCounter]) {
+                        solutionCounter++;
+                        changeMusic("Geradeaus");
+                    } else {
+                        solutionCounter = 0;
+                    }
+                    break;
 
-                    case directionsPossibilities.left:
-                        if (directionsPossibilities.left === solution[solutionCounter]) {
-                            solutionCounter++;
-                        } else {
-                            solutionCounter = 0;
-                        }
-                        break;
-                }
-                return minigame();
-            } else {
-                ƒS.Sound.fade(sound.beethoven_mvt1_links, 0, 0, true);
-                await ƒS.Speech.tell(characters.narrator, text.Narrator.N0001);
-                await ƒS.Speech.tell(characters.narrator, text.Narrator.N0002);
-                await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0001);
-                await ƒS.update();
-                await ƒS.Character.show(characters.sara, characters.sara.pose.open, newPositions.bottomright);
-                await ƒS.update();
-                await ƒS.Speech.tell(characters.sara, text.Sara.S0001);
-                await ƒS.update();
-                await ƒS.Character.hide(characters.sara);
-                await ƒS.update();
-                dataForSave.nameProtagonist = await ƒS.Speech.getInput();
-                await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0002 + " " + dataForSave.nameProtagonist);
-                await ƒS.update();
-                await ƒS.Character.show(characters.sara, characters.sara.pose.smile, newPositions.bottomright);
-                await ƒS.update();
-                await ƒS.Speech.tell(characters.sara, text.Sara.S0002);
-                await ƒS.update();
-                await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0003);
-                await ƒS.update();
-                await ƒS.Speech.tell(characters.sara, text.Sara.S0003);
-                await ƒS.update();
-                await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0004);
-                await ƒS.update();
-                await ƒS.Speech.tell(characters.sara, text.Sara.S0004);
-                await ƒS.update();
-                await ƒS.Location.show(locations.classroom);
-                ƒS.Sound.fade(sound.ambulance, 0.3, 0, true);
-                ƒS.Sound.fade(sound.brakes, 0.3, 0, true);
-                await ƒS.update(3);
-                ƒS.Sound.fade(sound.ambulance, 0, 0, true);
-                ƒS.Sound.fade(sound.brakes, 0, 0, true);
-                return "ChapterTwo";
+                case directionsPossibilities.left:
+                    if (directionsPossibilities.left === solution[solutionCounter]) {
+                        solutionCounter++;
+                        changeMusic("Links");
+                    } else {
+                        solutionCounter = 0;
+                    }
+                    break;
             }
         }
 
-        async function changeMusic(): Promise<void> {
+        await ƒS.Location.show(locations.musicClub);
+        await ƒS.update(transition.blink.duration, transition.blink.alpha, transition.blink.edge);
+        ƒS.Sound.fade(sound.beethoven_mvt1_links, 0, 0, true);
+        ƒS.Sound.fade(sound.beethoven_mvt1_rechts, 0, 0, true);
+        ƒS.Sound.fade(sound.beethoven_mvt1, 0, 0, true);
+        await ƒS.Speech.tell(characters.narrator, text.Narrator.N0001);
+        await ƒS.update();
+        await ƒS.Speech.tell(characters.narrator, text.Narrator.N0002);
+        await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0001);
+        await ƒS.update();
+        await ƒS.Character.animate(characters.sara, characters.sara.pose.open, animate("outToRight"));
+        await ƒS.update();
+        await ƒS.Speech.tell(characters.sara, text.Sara.S0001);
+        await ƒS.update();
+        await ƒS.Character.animate(characters.sara, characters.sara.pose.smile, animate("rightOut"));
+        await ƒS.Character.hide(characters.sara);
+        await ƒS.update();
 
-            console.log(solution[solutionCounter])
-            
-            if (solution[solutionCounter] === "Links") {
+        let name: string = await ƒS.Speech.getInput();
+        dataForSave.nameProtagonist = name;
+        characters.protagonist.name = name;
+        await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0002 + " " + dataForSave.nameProtagonist);
+
+        await ƒS.update();
+        await ƒS.Character.animate(characters.sara, characters.sara.pose.smile, animate("outToRight"));
+        await ƒS.update();
+        await ƒS.Speech.tell(characters.sara, text.Sara.S0002);
+        await ƒS.update();
+        await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0003);
+        await ƒS.update();
+        await ƒS.Speech.tell(characters.sara, text.Sara.S0003);
+        await ƒS.update();
+        await ƒS.Speech.tell(characters.protagonist, text.Protagonist.P0004);
+        await ƒS.update();
+        await ƒS.Speech.tell(characters.sara, text.Sara.S0004);
+        await ƒS.Character.animate(characters.sara, characters.sara.pose.open, animate("rightOut"));
+        await ƒS.Character.hide(characters.sara);
+        await ƒS.update();
+        ƒS.Sound.fade(sound.ambulance, 0.3, 0, true);
+        await ƒS.Speech.tell("", "");
+        ƒS.Sound.fade(sound.ambulance, 0, 0, true);
+        return "chapterTwo";
+
+        async function changeMusic(_direction: string): Promise<void> {
+
+            console.log("Changed Music - " + _direction)
+
+            if (_direction == "Links") {
                 ƒS.Sound.fade(sound.beethoven_mvt1_links, 0.3, 0, true);
                 ƒS.Sound.fade(sound.beethoven_mvt1_rechts, 0, 0, true);
-            } else if (solution[solutionCounter] === "Rechts") {
+            } else if (_direction === "Rechts") {
                 ƒS.Sound.fade(sound.beethoven_mvt1_rechts, 0.3, 0, true);
                 ƒS.Sound.fade(sound.beethoven_mvt1_links, 0, 0, true);
             } else {
                 ƒS.Sound.fade(sound.beethoven_mvt1_links, 0, 0, true);
                 ƒS.Sound.fade(sound.beethoven_mvt1_rechts, 0, 0, true);
             }
-            
+
         }
-                
+
     }
 }

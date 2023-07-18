@@ -24,6 +24,20 @@ canvas {
   height: 100%;
 }
 
+dialog[type="text"] {
+  width: 50%;
+  height: 50%;
+  background-image: url("Images/newspaper.jpg");
+  background-size: 100% 100%; 
+}
+
+.newspaper {
+  width: 70%;
+  position: fixed;
+  left: 20%;
+  top: 35%
+}
+
 
 speech {
   background: rgba(0, 0, 0, 0.445);
@@ -82,6 +96,7 @@ dialog[type=splash]>img#FudgeStoryLogo {
   display: flex;
   flex-direction: column;
   margin-top: 300px;
+  user-select: none;
 }
 
 .decisionClass button {
@@ -120,11 +135,69 @@ dialog[type=splash]>img#FudgeStoryLogo {
   background-color: rgba(0, 0, 0, 0.750);
 }
 
+
+
+dialog[type="inventory"] {
+  background-color: rgba(0, 0, 0, 0.500);
+  border: 2px solid rgb(0, 251, 255);
+  border-radius: 5px;
+  top: -200px;
+}
+
+dialog[type="inventory"]>ul {
+  padding-left: 100px;
+}
+
+dialog[type="inventory"]>ul>li {
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  border: 2px solid rgb(218, 9, 211);
+  border-radius: 10px;
+  list-style-type: none;
+  align-items: center;
+}
+
+dialog[type="inventory"] > button{
+  border: 2px solid rgb(218, 9, 211);
+  border-radius: 5px;
+  background: none;
+  color: white;
+  font-family: Century Gothic;
+  font-size: 30px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+dialog[type="inventory"] img {
+  position: absolute;
+  left: 20px;
+  height: 80px;
+  width: 80px;
+  -ms-user-select: None;
+  -moz-user-select: None;
+  -webkit-user-select: None;
+  user-select: None;
+}
+
+dialog[type="inventory"] > ul > li > name{
+  width: 200px;
+  color: white;
+}
+
+dialog[type="inventory"] > ul > li > amount{
+  display: none;
+}
+
+dialog[type="inventory"] > ul > li > description{
+  color: white;
+}
+
 meter::-webkit-meter-bar {
   background-color: #ececec;
 }
 
-meter[id="aisakaMeter"] {
+meter[id="saraMeter"] {
   position: absolute;
   transform:rotate(-90deg);
   bottom: 50%;
@@ -133,7 +206,7 @@ meter[id="aisakaMeter"] {
   height: 10%;
 }
 
-meter[id="aisakaMeter"]::-webkit-meter-optimum-value {
+meter[id="saraMeter"]::-webkit-meter-optimum-value {
   background-image: linear-gradient(
     90deg, 
     #8bcf69 5%, 
@@ -146,4 +219,14 @@ meter[id="aisakaMeter"]::-webkit-meter-optimum-value {
     #719fd1 95%,
     #719fd1 100%
   );
+}
+
+input[id="scoreForSara"] {
+  color: rgb(255, 248, 253);
+  background-color:rgb(155, 42, 95);
+  font-size: 11pt;
+  position: absolute;
+  left: 1.2%;
+  bottom: 19.5%;
+  width: 4%;
 }
