@@ -3,7 +3,7 @@ Nikita Gärtner
 Visual Novel
 Sommersemester 2023
 
-Visual Novel: https://nikitagae.github.io/VisualNovel/
+Visual Novel: https://nikitagae.github.io/VisualNovel/MoonlightSonata.html
 
 Code: https://github.com/NikitaGae/VisualNovel/tree/main/Source
 
